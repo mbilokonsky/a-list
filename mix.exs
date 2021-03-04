@@ -20,7 +20,7 @@ defmodule Alist.MixProject do
   def application do
     [
       mod: {Alist.Application, []},
-      extra_applications: [:logger, :runtime_tools]
+      extra_applications: [:logger, :runtime_tools, :mogrify_draw]
     ]
   end
 
@@ -44,7 +44,8 @@ defmodule Alist.MixProject do
       {:telemetry_poller, "~> 0.4"},
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
-      {:plug_cowboy, "~> 2.0"}
+      {:plug_cowboy, "~> 2.0"},
+      {:mogrify_draw, "~> 0.1.0"}
     ]
   end
 
