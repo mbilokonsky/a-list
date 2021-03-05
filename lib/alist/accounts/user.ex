@@ -3,9 +3,7 @@ defmodule Alist.Accounts.User do
   import Ecto.Changeset
 
   schema "users" do
-    field :email, :string
     field :name, :string
-    field :twitter_account_id, :string
     field :username, :string
 
     timestamps()
@@ -14,10 +12,8 @@ defmodule Alist.Accounts.User do
   @doc false
   def changeset(user, attrs) do
     user
-    |> cast(attrs, [:name, :username, :email, :twitter_account_id])
-    |> validate_required([:name, :username, :email, :twitter_account_id])
+    |> cast(attrs, [:name, :username])
+    |> validate_required([:name, :username])
     |> unique_constraint(:username)
-    |> unique_constraint(:email)
-    |> unique_constraint(:twitter_account_id)
   end
 end
