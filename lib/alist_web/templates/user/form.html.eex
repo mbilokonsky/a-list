@@ -13,13 +13,13 @@
   <%= text_input f, :username %>
   <%= error_tag f, :username %>
 
-  <%= label f, :email %>
-  <%= text_input f, :email %>
-  <%= error_tag f, :email %>
-
-  <%= label f, :twitter_account_id %>
-  <%= text_input f, :twitter_account_id %>
-  <%= error_tag f, :twitter_account_id %>
+  <div class="form-group">
+    <%= inputs_for f, :credential, fn cf -> %>
+      <%= label cf, :email %>
+      <%= text_input cf, :email %>
+      <%= error_tag cf, :email %>
+    <% end %>
+  </div>
 
   <div>
     <%= submit "Save" %>

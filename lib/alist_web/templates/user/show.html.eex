@@ -14,14 +14,8 @@
 
   <li>
     <strong>Email:</strong>
-    <%= @user.email %>
+    <%= @user.credential.email %>
   </li>
-
-  <li>
-    <strong>Twitter account:</strong>
-    <%= @user.twitter_account_id %>
-  </li>
-
 </ul>
 
 <span><%= link "Edit", to: Routes.user_path(@conn, :edit, @user) %></span>
