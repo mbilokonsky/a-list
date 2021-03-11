@@ -1,4 +1,4 @@
-defmodule HelloWeb.SessionController do
+defmodule AlistWeb.SessionController do
   use AlistWeb, :controller
 
   alias Alist.Accounts
