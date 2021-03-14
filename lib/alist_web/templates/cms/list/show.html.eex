@@ -1,0 +1,28 @@
+<h1>Show List</h1>
+
+<ul>
+
+  <li>
+    <strong>Title:</strong>
+    <%= @list.title %>
+  </li>
+
+  <li>
+    <strong>Body:</strong>
+    <%= @list.body %>
+  </li>
+
+  <li>
+    <strong>Views:</strong>
+    <%= @list.views %>
+  </li>
+
+  <li>
+    <strong>Author:</strong>
+    <%= author_name(@list) %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.cms_list_path(@conn, :edit, @list) %></span>
+<span><%= link "Back", to: Routes.cms_list_path(@conn, :index) %></span>

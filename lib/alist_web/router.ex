@@ -21,6 +21,12 @@ defmodule AlistWeb.Router do
     resources "/sessions", SessionController, only: [:new, :create, :delete], singleton: true
   end
 
+  scope "/cms", AlistWeb.CMS, as: :cms do
+    pipe_through [:browser, :authenticate_user]
+
+    resources "/lists", ListController
+  end
+
   # Other scopes may use custom stacks.
   # scope "/api", AlistWeb do
   #   pipe_through :api
